@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 232 25% 9%;
+    --foreground: 210 40% 98%;
+    --card: 232 25% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 232 25% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 267 100% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 232 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 232 25% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 232 25% 20%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 232 25% 20%;
+    --input: 232 25% 20%;
+    --ring: 267 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animation classes */
+.shimmer {
+  background-image: linear-gradient(
+    to right,
+    rgba(129, 44, 255, 0.1) 0%,
+    rgba(129, 44, 255, 0.2) 20%,
+    rgba(129, 44, 255, 0.1) 40%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
