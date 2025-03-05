@@ -1,47 +1,35 @@
 "use client"
 
 import { Link } from "react-router-dom"
+import { Search, MessageSquare, User } from 'lucide-react';
 import { motion } from "framer-motion"
 import { ModeToggle } from "./ui/mode-toggle"
+import { Button } from './ui/button';
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 shadow-sm">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link to="/" className="flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-blue-600"
-            >
-              <path d="M22 12.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-1.5" />
-              <path d="M22 7H9" />
-              <path d="M8 7v7" />
-              <path d="M18 15v6" />
-              <path d="M18 9v4" />
-              <path d="m15 12 3 3 3-3" />
-            </svg>
-            <span className="text-xl font-bold">Deals Dive</span>
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
+      <div className="container mx-auto flex h-16 items-center gap-4 px-4">
+        <div className="flex items-center gap-2">
+          <Link to="/" className="font-bold text-xl">
+            DealsDive
           </Link>
-        </motion.div>
-        <div className="flex items-center gap-4">
-          <nav className="hidden md:flex space-x-4">
-            <Link to="/" className="hover:text-blue-600 transition-colors">
-              Search
-            </Link>
-            <Link to="/chat" className="hover:text-blue-600 transition-colors">
-              Messages
-            </Link>
-          </nav>
-          <ModeToggle />
+        </div>
+        
+        <div className="ml-auto flex items-center gap-4">
+          <Link to="/">
+            <Button variant="ghost" size="icon">
+              <Search className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Link to="/chat">
+            <Button variant="ghost" size="icon">
+              <MessageSquare className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Button variant="ghost" size="icon">
+            <User className="h-5 w-5" />
+          </Button>
         </div>
       </div>
     </header>
