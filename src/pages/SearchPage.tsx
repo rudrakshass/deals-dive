@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Slider } from "@/components/ui/slider"
-import { industries, mockBusinesses } from "@/data/mockData"
+import { industries, mockBusinesses } from "@/src/data/mockData"
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
