@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { cn } from "@/lib/utils"
-import { mockChats, mockContacts, mockBusinesses } from "@/data/mockData"
+import { mockChats, mockContacts, mockBusinesses } from "@/src/data/mockData"
 
 interface Message {
   id: string
@@ -40,7 +40,7 @@ const ChatPage = () => {
   // Load messages for selected contact
   useEffect(() => {
     if (id && mockChats[id as keyof typeof mockChats]) {
-      setMessages(mockChats[id as keyof typeof mockChats])
+      setMessages(mockChats[id as keyof typeof mockChats] as Message[])
       setIsMobileOpen(true)
     } else {
       setMessages([])

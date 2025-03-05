@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { mockBusinesses, mockAgreements } from "@/data/mockData"
+import { mockBusinesses, mockAgreements } from "@/src/data/mockData"
 import { useToast } from "@/components/ui/use-toast"
 
 const AgreementForm = () => {
@@ -23,10 +23,16 @@ const AgreementForm = () => {
   // Check if there's an existing agreement for this business
   const existingAgreement = id && mockAgreements[id as keyof typeof mockAgreements]
 
-  const [amount, setAmount] = useState(existingAgreement?.amount || 100000)
-  const [time, setTime] = useState(existingAgreement?.time || 36)
-  const [interest, setInterest] = useState(existingAgreement?.interest || 5.0)
-  const [equity, setEquity] = useState(existingAgreement?.equity || 10)
+  const defaultValues = {
+    amount: 100000,
+    time: 36,
+    interest: 5.0,
+    equity: 10
+  }
+  const [amount, setAmount] = useState(existingAgreement && typeof existingAgreement === 'object' ? existingAgreement.amount : defaultValues.amount)
+  const [time, setTime] = useState(existingAgreement && typeof existingAgreement === 'object' ? existingAgreement.time : defaultValues.time)
+  const [interest, setInterest] = useState(existingAgreement && typeof existingAgreement === 'object' ? existingAgreement.interest : defaultValues.interest)
+  const [equity, setEquity] = useState(existingAgreement && typeof existingAgreement === 'object' ? existingAgreement.equity : defaultValues.equity)
 
   if (!business) {
     return (
