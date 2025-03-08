@@ -31,9 +31,6 @@ export default function Navbar() {
             <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
               Home
             </Link>
-            <Link href="/search" className="text-sm font-medium hover:text-primary transition-colors">
-              Startups
-            </Link>
             <Link href="/chat" className="text-sm font-medium hover:text-primary transition-colors">
               Messages
             </Link>
@@ -63,13 +60,6 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link
-              href="/search"
-              className="text-sm font-medium hover:text-primary transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Startups
             </Link>
             <Link
               href="/chat"

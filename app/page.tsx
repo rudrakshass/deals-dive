@@ -121,30 +121,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="bg-card border border-border rounded-lg p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Recent Success</h2>
-              <p className="text-muted-foreground mb-6">
-                <span className="text-primary font-medium">QuantumLeap AI</span> secured $4.2M in seed funding through DealsDive in just 3 weeks, connecting with investors who understand the deep tech space.
-              </p>
-              <div className="shimmer h-1 w-20 rounded-full mb-6"></div>
-              <blockquote className="border-l-2 border-primary pl-4 italic">
-                "DealsDive cut our fundraising timeline in half and connected us with investors who truly understand our vision."
-                <footer className="text-sm text-muted-foreground mt-2">— Sarah Chen, CEO of QuantumLeap AI</footer>
-              </blockquote>
-            </div>
-            <div className="bg-secondary/30 h-64 rounded-lg overflow-hidden flex items-center justify-center">
-              <div className="text-center p-6">
-                <div className="text-4xl font-bold text-primary mb-2">$42M+</div>
-                <p className="text-sm text-muted-foreground">Raised through DealsDive this quarter</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 text-center">
         <motion.div
           className="max-w-3xl mx-auto"
